@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>For Ceylinn ♡</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, #ffd9e8, transparent 35%),
+        radial-gradient(circle at bottom right, #ffb6d2, transparent 35%),
+        linear-gradient(135deg, #fff0f6, #ffd1e2);
+
+      color: #71364f;
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       FLOATING HEARTS
+    ========================= */
+
+    .heart {
+      position: fixed;
+      bottom: -30px;
+      color: #e879a5;
+      font-size: 20px;
+      pointer-events: none;
+      animation: float 6s linear forwards;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 0.7;
+      }
+
+      100% {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+      }
+    }
+
+    /* =========================
+       MAIN
+    ========================= */
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 680px;
+      padding: 38px 30px;
+      border-radius: 30px;
+
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(15px);
+
+      border: 1px solid rgba(255, 255, 255, 0.9);
+
+      box-shadow:
+        0 25px 70px rgba(174, 66, 111, 0.18);
+
+      text-align: center;
+
+      animation: appear 1.2s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       OPENING
+    ========================= */
+
+    .big-heart {
+      font-size: 65px;
+      color: #e85c92;
+      animation: heartbeat 1.6s infinite;
+      margin-bottom: 10px;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    h1 {
+      font-size: 34px;
+      color: #c43e73;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: #a15d79;
+      font-style: italic;
+      margin-bottom: 28px;
+    }
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    button {
+      border: none;
+      outline: none;
+
+      padding: 14px 27px;
+
+      border-radius: 999px;
+
+      background: linear-gradient(
+        135deg,
+        #ed77a5,
+        #d94f85
+      );
+
+      color: white;
+
+      font-size: 15px;
+      font-weight: 600;
+
+      cursor: pointer;
+
+      box-shadow:
+        0 10px 25px rgba(215, 75, 130, 0.25);
+
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.03);
+    }
+
+    button:active {
+      transform: scale(0.96);
+    }
+
+    /* =========================
+       LETTER
+    ========================= */
+
+    .letter {
+      display: none;
+
+      margin-top: 30px;
+
+      padding: 28px;
+
+      background: rgba(255, 250, 252, 0.95);
+
+      border-radius: 22px;
+
+      text-align: left;
+
+      line-height: 1.8;
+
+      box-shadow:
+        inset 0 0 30px rgba(210, 80, 130, 0.06);
+
+      animation: letterOpen 1s ease;
+    }
+
+    .letter.show {
+      display: block;
+    }
+
+    @keyframes letterOpen {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .letter p {
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .highlight {
+      color: #c43e73;
+      font-weight: 600;
+    }
+
+    /* =========================
+       ENDING
+    ========================= */
+
+    .ending {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 25px;
+
+      border-top: 1px solid #f3c6d8;
+    }
+
+    .ending-main {
+      color: #c43e73;
+      font-size: 21px;
+      font-weight: 700;
+    }
+
+    .signature {
+      margin-top: 8px;
+      color: #a66a83;
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    .tiny-heart {
+      color: #e85d92;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 500px) {
+
+      .page {
+        padding: 15px;
+      }
+
+      .card {
+        padding: 30px 18px;
+        border-radius: 25px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .big-heart {
+        font-size: 55px;
+      }
+
+      .letter {
+        padding: 20px;
+      }
+
+      .letter p {
+        font-size: 14px;
+      }
+
+      .ending-main {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <div class="page">
+
+    <div class="card">
+
+      <!-- OPENING -->
+
+      <div class="big-heart">
+        ♡
+      </div>
+
+      <h1>
+        for ceylinn
+      </h1>
+
+      <div class="subtitle">
+        there's something i've been wanting to tell you...
+      </div>
+
+      <button onclick="openLetter()">
+        open my letter ♡
+      </button>
+
+
+      <!-- LETTER -->
+
+      <div class="letter" id="letter">
+
+        <p>
+          tauu gasihh first impression akuu ke kamu tuhh,
+          <span class="highlight">
+            ihh kok ada orang lucu banget typing+suaranyaaa
+          </span>.
+        </p>
+
+        <p>
+          dan aga kaget soalnyaa gada satupun kata toxic
+          yang keluar dari kamuu soalnyaa jarang bangett.
+          terus sukaa yapping dan cerita hal ngga terduga
+          setiap harinyaa, sukaa matcha, punyaa banyak banget
+          hobi and multitalent.
+        </p>
+
+        <p>
+          akuu awalnya eumm ga berharap apa-apa,
+          kayaa jadi temen mabar biasaa gitu.
+          tapi pas lama kelamaan kitaa kenal kaya adaa
+          something gitu.
+        </p>
+
+        <p>
+          and i always thinking about you kadangg sampee
+          kebawa mimpi.
+          and umm literally
+          <span class="highlight">
+            you are my type &gt;&lt;
+          </span>
+        </p>
+
+        <p>
+          i'm falling when u cerita random anything,
+          i'm falling when we're playing together,
+          i'm falling when u support and fighting me.
+        </p>
+
+        <p>
+          dan kadang eumm kamu jadi penyemangat hari-hari akuu.
+          dan pas akuu capee banget terus chat kamuu,
+          rasa capenyaa ngilang ntahh kemanaa.
+        </p>
+
+        <p>
+          meskipun i know you don't have feeling the same
+          with me, kamuu jugaa gamauu pacaran dulu,
+          and setiaa with ur future gf.
+        </p>
+
+        <p>
+          but i just want you knowing my feeling.
+          dan aku berharap nantinya kita bakalan kayaa biasa aja
+          meskipun kamuu tau my feeling.
+        </p>
+
+        <p>
+          and please stay with me and grow together as friend.
+        </p>
+
+
+        <!-- ENDING -->
+
+        <div class="ending">
+
+          <div class="ending-main">
+            i'm falling with you, ceylinn
+            <span class="tiny-heart">♡</span>
+          </div>
+
+          <div class="signature">
+            ~ Lauren 1947
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    /* =========================
+       OPEN LETTER
+    ========================= */
+
+    function openLetter() {
+
+      const letter = document.getElementById("letter");
+
+      const button = document.querySelector("button");
+
+      letter.classList.add("show");
+
+      button.style.display = "none";
+
+      setTimeout(() => {
+        letter.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }, 200);
+
+    }
+
+
+    /* =========================
+       FLOATING HEARTS
+    ========================= */
+
+    function createHeart() {
+
+      const heart = document.createElement("div");
+
+      heart.className = "heart";
+
+      const hearts = [
+        "♡",
+        "♥",
+        "♡",
+        "♥"
+      ];
+
+      heart.innerHTML =
+        hearts[Math.floor(Math.random() * hearts.length)];
+
+      heart.style.left =
+        Math.random() * 100 + "vw";
+
+      heart.style.fontSize =
+        (14 + Math.random() * 20) + "px";
+
+      heart.style.animationDuration =
+        (5 + Math.random() * 4) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 9000);
+    }
+
+
+    setInterval(createHeart, 650);
+
+  </script>
+
+</body>
+</html>
